@@ -1,4 +1,4 @@
-I = imread("imagenes/IMPACT.png");
+I = imread("imagenes/CT.png");
 X = I(:);
 K = 2;
 [centroids, idx] = kMeans(X, K);
