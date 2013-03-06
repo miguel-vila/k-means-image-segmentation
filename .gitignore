@@ -1,4 +1,6 @@
 imagenes/
+*.png
+*.jpg
 
 #################
 ## Eclipse

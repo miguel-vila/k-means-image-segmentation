@@ -5,7 +5,7 @@ function [centroids, idx] = kMeans(X, K)
 % Tambien recibe los K centroides iniciales
 % Devuelve los centroides finales y el identificador del centroide que se le asigna a cada pixel
 
-max_iters = 50;
+max_iters = 5;
 
 [m n] = size(X);
 initial_centroids = initCentroids(X, K);
