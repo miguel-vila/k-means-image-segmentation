@@ -1,6 +1,6 @@
-I = imread("imagenes/regle.png");
+I = imread("imagenes/IMPACT.png");
 X = I(:);
-K = 3;
+K = 2;
 [centroids, idx] = kMeans(X, K);
 centroids
 I_out = reshape(round(centroids(idx,:)), size(I));

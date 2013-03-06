@@ -5,7 +5,7 @@ function [centroids, idx] = kMeans(X, K)
 % Tambien recibe los K centroides iniciales
 % Devuelve los centroides finales y el identificador del centroide que se le asigna a cada pixel
 
-max_iters = 5;
+max_iters = 20;
 
 [m n] = size(X);
 initial_centroids = initCentroids(X, K);
@@ -14,7 +14,7 @@ centroids = initial_centroids;
 previous_centroids = centroids;
 idx = zeros(m, 1);
 
-for i=1:max_iters    
+for i=1:max_iters
     % Output progress
     fprintf('K-Means iteration %d/%d...\n', i, max_iters);
     if exist('OCTAVE_VERSION')
@@ -25,7 +25,7 @@ for i=1:max_iters
     idx = findClosestCentroids(X, centroids);
     
     % Computa los centroides promediando los valores en un mismo cluster
-    centroids = computeCentroids(X, idx, K);
+    centroids = computeCentroids(X, idx, K)
 end
 
 end
