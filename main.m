@@ -1,8 +1,8 @@
-I = imread("imagenes/CT.png");
+I = im2double(imread('imagenes/CT.png'));
 X = I(:);
-K = 2;
+K = 4;
 [centroids, idx] = kMeans(X, K);
-centroids
-I_out = reshape(round(centroids(idx,:)), size(I));
+I_out = reshape(im2uint8(centroids(idx,:)), size(I));
+imshow(I);
 imshow(I_out);
-imwrite(I_out, "out.png");
+imwrite(I_out, 'out.png');

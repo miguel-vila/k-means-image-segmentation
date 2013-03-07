@@ -1,6 +1,7 @@
 imagenes/
 *.png
 *.jpg
+octave-core
 
 #################
 ## Eclipse
