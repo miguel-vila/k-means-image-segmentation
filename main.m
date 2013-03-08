@@ -1,7 +1,8 @@
-I = im2double(imread('imagenes/CT.png'));
-X = I(:);
-K = 4;
+I = im2double(imread('img.jpg'));
+X = construirMatrizDeEntrada(I);
+K = 2;
 [centroids, idx] = kMeans(X, K);
+centroids = centroids(:,1)
 I_out = reshape(im2uint8(centroids(idx,:)), size(I));
 
 figure;imshow(im2uint8(I));
