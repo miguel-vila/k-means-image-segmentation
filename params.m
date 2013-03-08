@@ -1,5 +1,5 @@
 function param = params()
-param.K = 7;
-param.archivo_imagen = '241004.jpg';
-param.max_iters = 40;
+param.K = 3;
+param.archivo_imagen = 'CT.png';
+param.max_iters = 60;
 end
