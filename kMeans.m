@@ -5,7 +5,8 @@ function [centroides, idx] = kMeans(X, K)
 % Tambien recibe los K centroides iniciales
 % Devuelve los centroides finales y el identificador del centroide que se le asigna a cada pixel
 
-max_num_iters = params().max_iters;
+p = params();
+max_num_iters = p.max_iters;
 
 [m n] = size(X);
 centroides = inicializarCentroides(X, K);

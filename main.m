@@ -16,4 +16,4 @@ figure;imshow(I_out);
 iminfo = impixelinfo;
 set(iminfo,'Position',[15 22 300 20]);
 
-imwrite(I_out, archivo_imagen+'_out.png');
+imwrite(I_out, strcat(archivo_imagen,'_out.png'));
