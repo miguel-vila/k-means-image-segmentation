@@ -1,6 +1,10 @@
-I = im2double(imread('img.jpg'));
+p = params();
+archivo_imagen = p.archivo_imagen;
+K = p.K;
+
+I = im2double(imread(archivo_imagen));
 X = construirMatrizDeEntrada(I);
-K = 2;
+
 [centroids, idx] = kMeans(X, K);
 centroids = centroids(:,1)
 I_out = reshape(im2uint8(centroids(idx,:)), size(I));
@@ -12,4 +16,4 @@ figure;imshow(I_out);
 iminfo = impixelinfo;
 set(iminfo,'Position',[15 22 300 20]);
 
-imwrite(I_out, 'out.png');
+imwrite(I_out, archivo_imagen+'_out.png');

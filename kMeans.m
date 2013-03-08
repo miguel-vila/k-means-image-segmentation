@@ -5,12 +5,12 @@ function [centroides, idx] = kMeans(X, K)
 % Tambien recibe los K centroides iniciales
 % Devuelve los centroides finales y el identificador del centroide que se le asigna a cada pixel
 
-max_num_iters = 60;
+max_num_iters = params().max_iters;
 
 [m n] = size(X);
 centroides = inicializarCentroides(X, K);
 idx = zeros(m, 1);
-
+idx_previo = idx;
 for i=1:max_num_iters
     % Output progress
     fprintf('K-Means iteration %d/%d...\n', i, max_num_iters);
@@ -25,9 +25,10 @@ for i=1:max_num_iters
 	
     % Computa los centroides promediando los valores en un mismo cluster
     centroides = computarCentroides(X, idx, K)
-	if centroides==centroides_previos
+	if idx==idx_previo
 		break
-	end
+    end
+    idx_previo = idx;
 end
 
 end
