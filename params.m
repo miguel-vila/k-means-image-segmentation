@@ -1,6 +1,6 @@
 function param = params()
-param.K = 4;
+param.K = 2;
 param.archivo_imagen = 'CT.png';
-param.max_iters = 80;
-param.medida_distancia = 2;
+param.max_iters = 90;
+param.medida_distancia = 3;
 end
